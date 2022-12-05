@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+
+
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style3.css') }}"/>
+
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+
+    <form method="POST" action="/add_message">
+
+            <header class="head-form">
+                <h2> Form for CV </h2>
+
+                <p>fill the from</p>
+            </header>
+        <div class="con">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class=flashes>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+            <br>
+            <div class="field-set">
+                <table>
+                    <tr>
+
+                        <td align="right"><input class="form-input" type="text" name="text" placeholder="Name"
+                                                 id="form-input"></td>
+
+                        <td align="left"><b>My name is: {{ output }}</b></td>
+                    </tr>
+                    <tr>
+
+                        <td align="right"><input class="form-input" type="text" name="age" placeholder="Age"
+                                                 id="form-input2"></td>
+                        <td align="left"><b>My age is: {{ output2 }}</b></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><input class="form-input" type="text" name="address" placeholder="Address">
+                        </td>
+                        <td align="left"><b>My addres is: {{ output3 }}</b></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><input class="form-input" type="text" name="email"
+                                                 placeholder="Email:example@gmail.com"></td>
+                        <td align="left"><b>My email is: {{ output4 }}</b></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><input class="form-input" type="text" name="phone" placeholder="Phone"></td>
+                        <td align="left"><b>My phone is: {{ output5 }}</b></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><input class="form-input" type="text" name="profession"
+                                                 placeholder="Profession"></td>
+                        <td align="left"><b>I am: {{ output6 }}</b></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><input class="form-input" type="text" name="desc" placeholder="Description">
+                        </td>
+                        <td align="left"><b>More about my job: {{ output7 }}</b></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><input class="form-input" type="text" name="experience"
+                                                 placeholder="Experience"></td>
+                        <td align="left"><b>Experience: {{ output8 }}</b></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><input class="form-input" type="text" name="education"
+                                                 placeholder="Education"></td>
+                        <td align="left"><b>Education: {{ output9 }}</b></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><input class="form-input" type="text" name="projects" placeholder="Projects">
+                        </td>
+                        <td align="left"><b>Projects: {{ output10}}</b></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><input class="form-input" type="text" name="skills" placeholder="Skills"></td>
+                        <td align="left"><b>Skills: {{ output11}}</b></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><input class="form-input" type="text" name="interests"
+                                                 placeholder="Interests"></td>
+                        <td align="left"><b>Interests: {{ output12}}</b></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><input class="form-input" type="text" name="image_url"
+                                                 placeholder="Image URL:https://....png/jpg"></td>
+                        <td align="left"><b>Image: {{ output13 }}</b></td>
+                    </tr>
+                </table>
+
+
+            </div>
+
+
+            <div class="other">
+                <button type="submit">Save</button>
+
+            </div>
+
+
+        </div>
+
+
+    </form>
+</div>
+<form action="/make_pdf">
+    <button type="submit">View the CV</button>
+</form>
+
+<link rel="stylesheet" type="text/js" href="{{ url_for('static', filename='js/index.js') }}"/>
+
+</body>
+</html>

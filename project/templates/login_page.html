@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Log In Form CSS 2017</title>
+
+
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"/>
+
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <form method="POST">
+
+        <div class="con">
+
+            <header class="head-form">
+                <h2>Log In</h2>
+
+                <p>login here using your username and password</p>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul class=flashes>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endwith %}
+            </header>
+
+            <br>
+            <div class="field-set">
+
+
+                <span class="input-item">
+           <i class="fa fa-user-circle"></i>
+         </span>
+
+                <input class="form-input" type="text" name="login" placeholder="UserName" id="form-input">
+
+                <br>
+
+
+                <span class="input-item">
+        <i class="fa fa-key"></i>
+       </span>
+
+                <input class="form-input" type="password" name="password" placeholder="Password" id="txt-input">
+
+                <br>
+
+                <form style="display: inline" action="{{ url_for('main') }}" method="get">
+                    <button class="Center" type="submit" value="Login">Login</button>
+                </form>
+            </div>
+
+
+            <div class="other">
+
+                <form style="display: inline" action="{{ url_for('register') }}" method="get">
+
+                    <button>Register
+
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                    </button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </form>
+</div>
+
+<link rel="stylesheet" type="text/js" href="{{ url_for('static', filename='js/index.js') }}"/>
+
+</body>
+</html>

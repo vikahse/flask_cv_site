@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greetings</title>
+
+
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"/>
+
+</head>
+<body>
+<header class="head-form">
+    <h2>Hi! You are at the site to make your own CV. <br/> Everything you need is to register, fill the form and convert
+        it to PDF. <br/> And you will have our own CV!
+        Click the button bellow</h2>
+
+    <form style="display: inline" action="{{ url_for('login_page') }}" method="get">
+
+        <button>Register or Login</button>
+    </form>
+</header>
+<link rel="stylesheet" type="text/js" href="{{ url_for('static', filename='js/index.js') }}"/>
+</body>
+</html>
